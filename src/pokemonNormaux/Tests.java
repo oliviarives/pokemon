@@ -2,7 +2,6 @@ package pokemonNormaux;
 
 import java.util.Random;
 
-import pokemonsNormaux.Pokemon0;
 
 public class Tests {
 

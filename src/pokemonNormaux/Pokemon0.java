@@ -1,7 +1,5 @@
 package pokemonNormaux;
 
-import pokemonsNormaux.Pokemon0;
-
 public class Pokemon0 {
 
 	private String nom;
