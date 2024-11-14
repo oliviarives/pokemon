@@ -2,22 +2,24 @@ package pokemonNormaux;
 
 import java.util.Random;
 
-public class Pokemon0 {
+public abstract class Pokemon {
 
 	private String nom;
 	protected int hp;
 	private int atk;
 	private int niveau;
 	private static int niveauMax = 10;
+	private TypePokemon type;
 	private static java.util.Random random = new Random();
 	
-	public Pokemon0 (String nom) {
+	public Pokemon (String nom, TypePokemon type) {
 		this.nom = nom;
+		this.type = type;
 		this.niveau = random.nextInt(1, niveauMax);
 		this.hp = 2 * this.niveau;
 		this.atk = (this.niveau / 2) + 1;
 	}
-	
+
 	public String getNom() {
 		return this.nom;
 	}
@@ -34,6 +36,10 @@ public class Pokemon0 {
 		return this.niveau;
 	}
 	
+	public TypePokemon getType() {
+		return type;
+	}
+	
 	public boolean isKO(){
 		if(this.hp == 0) {
 			System.out.println(this.nom + " est KO");
@@ -47,16 +53,16 @@ public class Pokemon0 {
 		this.hp = this.niveau * 2;
 	}
 	
-	public void attaquer(Pokemon0 p) {
-		System.out.println("[Pokemon " +this.nom+"] : " + "J'attaque "+ p.nom +" !");
-		p.hp = p.hp - this.atk;
-	}
+	public abstract void attaquer(Pokemon p);
+	
+	public abstract void subir(Pokemon p);
 
 	public String toString() {
 		String mess = "Je m'appelle "+ this.nom + " ! "
 				+ " Je suis au niveau " + this.niveau 
 				+ ", j'ai " + this.hp + " points de vie," 
-				+ " mon attaque est de " + this.atk;
+				+ " mon attaque est de " + this.atk 
+				+ " Je suis de type " + this.type;
 		return mess;
 	}
 	

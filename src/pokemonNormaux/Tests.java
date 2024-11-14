@@ -1,14 +1,9 @@
 package pokemonNormaux;
 
-import java.util.Random;
-
-
 public class Tests {
 
-	private static java.util.Random random = new Random();
-
 	public static void main(String[] args) {
-		int min = 10;
+		/*int min = 10;
 		int max = 0;
 		// 20 Lancers de 1D6
 		for (int i = 1; i <= 20; i++) {
@@ -19,7 +14,7 @@ public class Tests {
 			else if (r > max)
 				max = r;	
 		}
-		System.out.println("\n["+ min + "," + max + "]");
+		System.out.println("\n["+ min + "," + max + "]");*/
 		
 		System.out.println("\n");
 		System.out.println("\nTEST POKEMON0 \n");
